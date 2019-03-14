@@ -19,6 +19,7 @@ public final class SectionFormer {
     public init(rowFormers: [RowFormer] = []) {
         self.rowFormers = rowFormers
     }
+    public var identifier = String("")
     
     /// All RowFormers. Default is empty.
     public private(set) var rowFormers = [RowFormer]()

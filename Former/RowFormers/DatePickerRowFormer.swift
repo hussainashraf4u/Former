@@ -61,4 +61,7 @@ open class DatePickerRowFormer<T: UITableViewCell>
             onDateChanged?(date)
         }
     }
+    public override func rowValue() -> Any? {
+        return self.date
+    }
 }

@@ -87,4 +87,7 @@ open class StepperRowFormer<T: UITableViewCell>
         cell.formDisplayLabel()?.text = displayTextFromValue?(value) ?? "\(value)"
         onValueChanged?(value)
     }
+    public override func rowValue() -> Any? {
+        return self.cell.formStepper().value
+    }
 }

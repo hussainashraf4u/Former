@@ -154,6 +154,9 @@ open class SelectorPickerRowFormer<T: UITableViewCell, S>
             displayLabel?.textColor = displayDisabledColor
         }
     }
+    public override func rowValue() -> Any? {
+        return self.pickerItems[self.selectedRow ?? 0]
+    }
     
     // MARK: Private
     

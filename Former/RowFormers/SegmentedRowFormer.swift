@@ -73,4 +73,7 @@ open class SegmentedRowFormer<T: UITableViewCell>
             onSegmentSelected?(selectedIndex, selectedTitle)
         }
     }
+    public override func rowValue() -> Any? {
+        return self.cell.formSegmented().titleForSegment(at: self.cell.formSegmented().selectedSegmentIndex)
+    }
 }

@@ -138,4 +138,7 @@ open class SelectorDatePickerRowFormer<T: UITableViewCell>
         cell.formDisplayLabel()?.text = displayTextFromDate?(date) ?? "\(date)"
         onDateChanged?(date)
     }
+    public override func rowValue() -> Any? {
+        return self.date
+    }
 }

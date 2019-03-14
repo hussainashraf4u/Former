@@ -182,4 +182,7 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>
             onValueChanged?(inlinePickerItem)
         }
     }
+    public override func rowValue() -> Any? {
+        return self.pickerItems[self.selectedRow]
+    }
 }

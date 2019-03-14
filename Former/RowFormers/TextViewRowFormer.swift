@@ -138,6 +138,9 @@ open class TextViewRowFormer<T: UITableViewCell>
             }
         }
     }
+    public override func rowValue() -> Any? {
+        return self.cell.formTextView().text
+    }
 }
 
 private class Observer<T: UITableViewCell>:

@@ -137,6 +137,9 @@ open class InlineDatePickerRowFormer<T: UITableViewCell>
         isEditing = false
         onEditingEnded?(date, cell)
     }
+    public override func rowValue() -> Any? {
+        return self.date
+    }
     
     // MARK: Private
     
