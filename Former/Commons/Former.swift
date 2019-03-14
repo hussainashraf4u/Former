@@ -1064,9 +1064,9 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
             section.rowFormers.forEach({ (row) in
                 if let value = row.rowValue() {
                     if let _ = section.identifier {
-                        formValue.updateValue(value, forKey: row.identifier)
-                    } else {
                         sectionValues.updateValue(value, forKey: row.identifier)
+                    } else {
+                        formValue.updateValue(value, forKey: row.identifier)
                     }
                 }
             })
