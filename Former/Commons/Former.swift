@@ -1076,4 +1076,16 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
         }
         return formValue
     }
+    @discardableResult
+    public func reloadAndUpdate(rowFormer: RowFormer, rowAnimation: UITableView.RowAnimation = .none) -> Self {
+        for (section, sectionFormer) in sectionFormers.enumerated() {
+            if let row = sectionFormer.rowFormers.index(where: { $0 === rowFormer}) {
+                tableView?.reloadRows(at: [IndexPath(row: row, section: section)], with: rowAnimation)
+                tableView?.beginUpdates()
+                tableView?.endUpdates()
+            }
+            
+        }
+        return self
+    }
 }
