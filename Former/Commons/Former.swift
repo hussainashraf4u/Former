@@ -1057,10 +1057,10 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
         return viewFormer.viewInstance
     }
     
-    public func formValues() -> Dictionary<String, Any?> {
-        var formValue = Dictionary<String, Any?>()
+    public func formValues() -> Dictionary<String, Any> {
+        var formValue = Dictionary<String, Any>()
         sectionFormers.forEach { (section) in
-            var sectionValues = Dictionary<String, Any?>()
+            var sectionValues = Dictionary<String, Any>()
             section.rowFormers.forEach({ (row) in
                 if let value = row.rowValue() {
                     if let _ = section.identifier {
