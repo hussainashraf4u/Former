@@ -1063,14 +1063,16 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
             var sectionValues = Dictionary<String, Any>()
             section.rowFormers.forEach({ (row) in
                 if let value = row.rowValue() {
-                    if section.identifier.isEmpty {
+                    if let _ = section.identifier {
                         formValue.updateValue(value, forKey: row.identifier)
                     } else {
                         sectionValues.updateValue(value, forKey: row.identifier)
                     }
                 }
             })
-            formValue.updateValue(sectionValues, forKey: section.identifier)
+            if let identifier = section.identifier {
+                formValue.updateValue(sectionValues, forKey: identifier)
+            }
         }
         return formValue
     }
