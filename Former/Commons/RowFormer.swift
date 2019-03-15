@@ -22,7 +22,7 @@ open class RowFormer {
     public final var rowHeight: CGFloat = 44
     public final var isEditing = false
     public final var enabled = true { didSet { update() } }
-    public final var identifier = String("")
+    public final var identifier : String!
     public func rowValue() -> Any? {
         return nil
     }

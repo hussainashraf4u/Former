@@ -1062,11 +1062,11 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
         sectionFormers.forEach { (section) in
             var sectionValues = Dictionary<String, Any>()
             section.rowFormers.forEach({ (row) in
-                if let value = row.rowValue() {
+                if let value = row.rowValue(), let rowIdentifier = row.identifier {
                     if let _ = section.identifier {
-                        sectionValues.updateValue(value, forKey: row.identifier)
+                        sectionValues.updateValue(value, forKey: rowIdentifier)
                     } else {
-                        formValue.updateValue(value, forKey: row.identifier)
+                        formValue.updateValue(value, forKey: rowIdentifier)
                     }
                 }
             })
