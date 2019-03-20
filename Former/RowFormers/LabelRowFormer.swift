@@ -49,7 +49,7 @@ open class LabelRowFormer<T: UITableViewCell>
         }
     }
     open override func rowValue() -> Any? {
-        return self.text
+        return self.subText
     }
     
     // MARK: Private
