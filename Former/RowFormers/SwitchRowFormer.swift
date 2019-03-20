@@ -85,7 +85,7 @@ open class SwitchRowFormer<T: UITableViewCell>
             onSwitchChanged?(switched)
         }
     }
-    public override func rowValue() -> Any? {
+    open override func rowValue() -> Any? {
         return self.switched
     }
 }

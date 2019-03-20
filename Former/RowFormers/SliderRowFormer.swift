@@ -97,7 +97,7 @@ open class SliderRowFormer<T: UITableViewCell>
         displayLabel?.text = displayTextFromValue?(adjustedValue) ?? "\(adjustedValue)"
         onValueChanged?(adjustedValue)
     }
-    public override func rowValue() -> Any? {
+    open override func rowValue() -> Any? {
         return self.cell.formSlider().value
     }
 }

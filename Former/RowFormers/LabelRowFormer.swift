@@ -48,7 +48,7 @@ open class LabelRowFormer<T: UITableViewCell>
             subTextLabel?.textColor = subTextDisabledColor
         }
     }
-    public override func rowValue() -> Any? {
+    open override func rowValue() -> Any? {
         return self.text
     }
     

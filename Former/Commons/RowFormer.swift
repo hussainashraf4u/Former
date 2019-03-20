@@ -23,7 +23,7 @@ open class RowFormer {
     public final var isEditing = false
     public final var enabled = true { didSet { update() } }
     public final var identifier : String!
-    public func rowValue() -> Any? {
+    open func rowValue() -> Any? {
         return nil
     }
     open var canBecomeEditing: Bool {

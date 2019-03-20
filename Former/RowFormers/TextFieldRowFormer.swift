@@ -133,7 +133,7 @@ open class TextFieldRowFormer<T: UITableViewCell>
         }
         cell.formTextField().isUserInteractionEnabled = false
     }
-    public override func rowValue() -> Any? {
+    open override func rowValue() -> Any? {
         return self.cell.formTextField().text
     }
 }

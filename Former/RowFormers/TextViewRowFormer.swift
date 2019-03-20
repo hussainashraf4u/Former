@@ -138,7 +138,7 @@ open class TextViewRowFormer<T: UITableViewCell>
             }
         }
     }
-    public override func rowValue() -> Any? {
+    open override func rowValue() -> Any? {
         return self.cell.formTextView().text
     }
 }
