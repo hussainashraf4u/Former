@@ -183,6 +183,6 @@ open class InlinePickerRowFormer<T: UITableViewCell, S>
         }
     }
     open override func rowValue() -> Any? {
-        return self.pickerItems[self.selectedRow]
+        return self.pickerItems[self.selectedRow].value
     }
 }
