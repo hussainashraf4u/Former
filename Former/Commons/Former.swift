@@ -1088,4 +1088,16 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
         }
         return self
     }
+    @discardableResult
+    public func searchRow(for identifier:String) -> RowFormer? {
+        
+        for section in sectionFormers {
+            for row in section.rowFormers {
+                if row.identifier == identifier {
+                    return row
+                }
+            }
+        }
+        return nil
+    }
 }
