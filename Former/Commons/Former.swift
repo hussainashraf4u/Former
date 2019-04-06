@@ -1057,21 +1057,21 @@ extension Former: UITableViewDelegate, UITableViewDataSource {
         return viewFormer.viewInstance
     }
     
-    public func formValues() -> Dictionary<String, Any> {
-        var formValue = Dictionary<String, Any>()
+    public func formValues() -> Dictionary<String, AnyObject?> {
+        var formValue = Dictionary<String, AnyObject?>()
         sectionFormers.forEach { (section) in
-            var sectionValues = Dictionary<String, Any>()
+            var sectionValues = Dictionary<String, AnyObject?>()
             section.rowFormers.forEach({ (row) in
                 if let value = row.rowValue(), let rowIdentifier = row.identifier {
                     if let _ = section.identifier {
-                        sectionValues.updateValue(value, forKey: rowIdentifier)
+                        sectionValues.updateValue(value as AnyObject, forKey: rowIdentifier)
                     } else {
-                        formValue.updateValue(value, forKey: rowIdentifier)
+                        formValue.updateValue(value as AnyObject, forKey: rowIdentifier)
                     }
                 }
             })
             if let identifier = section.identifier {
-                formValue.updateValue(sectionValues, forKey: identifier)
+                formValue.updateValue(sectionValues as AnyObject, forKey: identifier)
             }
         }
         return formValue
