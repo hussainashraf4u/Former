@@ -139,7 +139,7 @@ open class TextViewRowFormer<T: UITableViewCell>
         }
     }
     open override func rowValue() -> Any? {
-        return self.cell.formTextView().text
+        return self.text
     }
 }
 
